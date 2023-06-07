@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3042628298547931048}
   - component: {fileID: 8392179472955943885}
-  m_Layer: 0
+  - component: {fileID: 8292611292780622522}
+  m_Layer: 3
   m_Name: Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8292611292780622522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066036596708569238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b764b9071420e4a9676fe5b360035d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: e1a3fba57be35e245a51529633cd7677, type: 3}
+  jump: {fileID: 21300000, guid: 4bc051239d11e4c44a4d59bfe2d42cb4, type: 3}
+  slide: {fileID: 21300000, guid: 54cbc1e5eb3b4324c9ee63302045cd27, type: 3}
+  run: {fileID: 21300000, guid: b6753e9e6e48f5b468b6ab27ebda4c70, type: 3}
 --- !u!1 &1373918267348422067
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +111,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9113801603049390784}
   - component: {fileID: 7624365765045426190}
-  m_Layer: 0
+  - component: {fileID: 6863148768085881892}
+  m_Layer: 3
   m_Name: Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,6 +186,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6863148768085881892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373918267348422067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b764b9071420e4a9676fe5b360035d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: 4cc74ca7c66de81409328222aa7c8749, type: 3}
+  jump: {fileID: 21300000, guid: 490789b11705a1c4da058c83a8c3e33c, type: 3}
+  slide: {fileID: 21300000, guid: 2838696a1899b8e4ebccb00a9d1dacb0, type: 3}
+  run: {fileID: 21300000, guid: 1e2870d19f86d2243a1405f8a8204488, type: 3}
 --- !u!1 &3808821191157227630
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +214,7 @@ GameObject:
   - component: {fileID: 8510824552441118841}
   - component: {fileID: 8169757124730341331}
   - component: {fileID: 5042705272077359722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mario
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -202,7 +236,7 @@ Transform:
   - {fileID: 9113801603049390784}
   - {fileID: 3042628298547931048}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8510824552441118841
 Rigidbody2D:
@@ -278,6 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c69cb148fa4ec49b67aaf3cf8ea7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  maxJumpHeight: 5
+  moveSpeed: 8
+  maxJumpHeight: 4.5
   maxJumpTime: 1
