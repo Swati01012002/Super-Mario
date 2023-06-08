@@ -10,10 +10,22 @@ public class Goomba : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Player player = collision.gameObject.GetComponent<Player>(); 
+
            if(collision.transform.DotTest(transform, Vector2.down)) //to check whether mario lands on goomba head or not
            {
             Flatten();
+           }else{
+            player.Hit();
            }
+        }
+    }
+
+    private void OnTriggeredEnter2D(Collider2D other)
+    {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Shell"))
+        {
+            Hit();
         }
     }
 
@@ -25,5 +37,14 @@ public class Goomba : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = flatSprite;
         Destroy(gameObject, 0.5f); //destroy goomba if mario land on his head
     }
+
+    private void Hit()
+    {
+        GetComponent<Animations>().enabled = false;
+        GetComponent<Death>().enabled= true;
+        Destroy(gameObject, 3f);
+    }
+
+    
 
 }

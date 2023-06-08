@@ -91,8 +91,16 @@ public class Movements : MonoBehaviour
         rigidbody.MovePosition(position); //unity function to change position
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //unity builtin func to prevent mario movement when the block is above him
+    private void OnCollisionEnter2D(Collision2D collision) //unity built-in func to prevent mario movement when the block is above him
     {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            if(transform.DotTest(collision.transform, Vector2.down))
+            {
+                velocity.y = jumpForce / 2f; //when mario hits goomba
+                jumping = true;
+            }
+        }
         
         if(collision.gameObject.layer != LayerMask.NameToLayer("PowerUp"))
         {
