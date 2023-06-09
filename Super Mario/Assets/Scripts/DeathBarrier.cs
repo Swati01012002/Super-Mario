@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathBarrier : MonoBehaviour
 {
-    private void OnTriggeredEnter2D(Collider2D other) //if mario goes underground then reset the level
+    private void OnTriggerEnter2D(Collider2D other) //if mario goes underground then reset the level
     {
         if(other.CompareTag("Player"))
         {

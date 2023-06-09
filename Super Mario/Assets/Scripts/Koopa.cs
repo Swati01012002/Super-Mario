@@ -16,7 +16,11 @@ public class Koopa : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>(); 
 
-           if(collision.transform.DotTest(transform, Vector2.down)) //to check whether mario lands on goomba head or not
+           if(player.starpower)
+           {
+            Hit();
+           }
+           else if(collision.transform.DotTest(transform, Vector2.down)) //to check whether mario lands on goomba head or not
            {
             EnterShell();
            }else{
@@ -37,7 +41,13 @@ public class Koopa : MonoBehaviour
             else
             {
                 Player player = other.GetComponent<Player>();
-                player.Hit();
+
+                if(player.starpower)
+                {
+                    Hit();
+                }else{
+                    player.Hit();
+                }
             }
         }
         else if(!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell"))

@@ -12,7 +12,11 @@ public class Goomba : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>(); 
 
-           if(collision.transform.DotTest(transform, Vector2.down)) //to check whether mario lands on goomba head or not
+           if(player.starpower)
+           {
+            Hit();
+           }
+           else if(collision.transform.DotTest(transform, Vector2.down)) //to check whether mario lands on goomba head or not
            {
             Flatten();
            }else{
@@ -45,6 +49,6 @@ public class Goomba : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-    
+
 
 }

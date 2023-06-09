@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSprite : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer; //reference to sprite renderer
+    public SpriteRenderer spriteRenderer { get; private set; } //reference to sprite renderer
     private Movements movement;
 
     public Sprite idle;
