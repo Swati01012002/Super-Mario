@@ -6,6 +6,7 @@ public class Movements : MonoBehaviour
 {
     private new Camera camera;
     private new Rigidbody2D rigidbody;
+    private new Collider2D collider;
 
     private float inputAxis;
     private Vector2 velocity;
@@ -26,6 +27,23 @@ public class Movements : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>(); //to search for component on which script is to be applied
         camera = Camera.main; //unity built in func to access camera
+        collider = GetComponent<Collider2D>();
+    }
+
+    private void OnEnable()
+    {
+        rigidbody.isKinematic = false;
+        collider.enabled = true;
+        velocity = Vector2.zero;
+        jumping = false;
+    }
+
+    private void OnDisable()
+    {
+        rigidbody.isKinematic = true;
+        collider.enabled = false;
+        velocity = Vector2.zero;
+        jumping = false;
     }
 
     private void Update()
