@@ -69,7 +69,7 @@ public class Movements : MonoBehaviour
         velocity.x = 0f; //to change velocity to zero if object collides to the wall in x direction
        }
 
-       if(velocity.x > 0f){ //for ratation of mario's face only in y axis
+       if(velocity.x > 0f){ //for rotation of mario's face only in y axis
         transform.eulerAngles = Vector3.zero;
        }else if(velocity.x < 0f){
         transform.eulerAngles = new Vector3(0f, 180f, 0f);
